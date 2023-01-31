@@ -1,0 +1,167 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+<body>
+	<div class="wrapper">
+        <div class="main-header" data-background-color="purple">
+            <div class="logo-header">
+                <a href="../index.html" class="logo">
+                    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="navbar brand" class="navbar-brand" width="80%">
+                </a>
+                <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon">
+                        <i class="fa fa-bars"></i>
+                    </span>
+                </button>
+                <button class="topbar-toggler more"><i class="fa fa-ellipsis-v"></i></button>
+                <div class="navbar-minimize">
+                    <button class="btn btn-minimize btn-rounded">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+		<!-- Sidebar -->
+		<div class="sidebar">
+			
+			<div class="sidebar-wrapper scrollbar-inner">
+				<div class="sidebar-content">
+					<div class="user">
+						<div class="avatar-sm float-left mr-2">
+							<img src="{{ url_for('static', filename='img/light-saber.png') }}" alt="..." class="avatar-img rounded-circle">
+						</div>
+						<div class="info">
+							<a data-toggle="collapse" href="#collapseExample" aria-expanded="true">
+								<span>
+									Hizrian
+									<span class="user-level">Самый лучший падаван</span>
+									<span class="caret"></span>
+								</span>
+							</a>
+							<div class="clearfix"></div>
+
+							<div class="collapse in" id="collapseExample">
+								<ul class="nav">
+									<li>
+										<a href="#profile">
+											<span class="link-collapse">Мой профиль</span>
+										</a>
+									</li>
+                                    <li>
+										<a href="#file">
+											<span class="link-collapse">Загрузить файл</span>
+										</a>
+									</li>
+									<li>
+										<a href="#edit">
+											<span class="link-collapse">Выйти</span>
+										</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<ul class="nav">
+						<li class="nav-item active">
+							<a href="{{ url_for('frozen')}}">
+								<i class="fas fa-snowflake"></i>
+								<p>Заморозка</p>
+							</a>
+						</li>
+                        <li class="nav-item">
+							<a href="../index.html">
+								<i class="fas fa-heart"></i>
+								<p>Сердца</p>
+							</a>
+						</li>
+                        <li class="nav-item">
+							<a href="../index.html">
+								<i class="fas fa-signature"></i>
+								<p>Письменные работы</p>
+							</a>
+						</li>
+						<li class="nav-item">
+							<a href="../index.html">
+								<i class="fas fa-tag"></i>
+								<p>Теги</p>
+							</a>
+						</li>
+                        <li class="nav-item">
+							<a href="../index.html">
+								<i class="fas fa-lock"></i>
+								<p>Игнорщики</p>
+							</a>
+						</li>
+                        <li class="nav-item">
+							<a href="../index.html">
+								<i class="fas fa-pen-square"></i>
+								<p>Варианты</p>
+							</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div class="main-panel">
+			<div class="content">
+				<div class="page-inner">
+					<div class="page-header">
+						<h4 class="page-title">Заморозка</h4>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-body">
+									<div class="table-responsive">
+										<table id="basic-datatables" class="display table table-striped table-hover" >
+											<thead>
+												<tr>
+													<th>Имя</th>
+													<th>Ссылка</th>
+													<th>Дата заморозки (примерно)</th>
+													<th>Осталось дней заморозки</th>
+													<th>Дата сообщение от препа</th>
+                                                    <th>Дата сообщения от ученика</th>
+												</tr>
+											</thead>
+											<tfoot>
+												<tr>
+													<th>Имя</th>
+													<th>Ссылка</th>
+													<th>Дата заморозки (примерно)</th>
+													<th>Осталось дней заморозки</th>
+													<th>Дата сообщение от препа</th>
+                                                    <th>Дата сообщения от ученика</th>
+												</tr>
+											</tfoot>
+											<tbody>
+												<tr>
+													<td>Tiger Nixon</td>
+													<td>System Architect</td>
+													<td>Edinburgh</td>
+													<td>61</td>
+													<td>2011/04/25</td>
+													<td>$320,800</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+{% endblock %}
+
+{% block script %}
+	<script >
+		$(document).ready(function() {
+			$('#basic-datatables').DataTable({
+
+            });
+		});
+	</script>
+{% endblock %}

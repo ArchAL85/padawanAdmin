@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{%  block content %}
+<body class="login">
+	<div class="wrapper wrapper-login">
+		<div class="container container-login animated fadeIn">
+			<h3 class="text-center">Вход</h3>
+				<form action="" method="post" class="login-form">
+					<div class="form-group form-floating-label">
+						<input id="username" name="username" type="text" class="form-control input-border-bottom" required>
+						<label for="username" class="placeholder">Логин</label>
+					</div>
+					<div class="form-group form-floating-label">
+						<input id="password" name="password" type="password" class="form-control input-border-bottom" required>
+						<label for="password" class="placeholder">Пароль</label>
+						<div class="show-password">
+							<i class="flaticon-interface"></i>
+						</div>
+					</div>
+					<div class="form-action mb-3">
+						<input type="submit" value="Войти" class="btn btn-primary btn-rounded btn-login">
+					</div>
+					<div class="login-account">
+						<span class="msg">Нет аккаунта?</span>
+						<a href="https://t.me/archal" class="link">Напиши мне</a>
+					</div>
+				</form>
+		</div>
+	</div>
+	{% endblock %}
