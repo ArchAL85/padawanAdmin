@@ -1,10 +1,12 @@
 from flask_sqlalchemy import SQLAlchemy
+from flask_login import UserMixin
+from werkzeug.security import generate_password_hash, check_password_hash
 from datetime import datetime
 
 from .just_db import db
 
 
-class Users(db.Model):
+class Users(db.Model, UserMixin):
     __tablename__ = 'users'
     user_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(255), nullable=False)
@@ -14,6 +16,15 @@ class Users(db.Model):
 
     def __repr__(self):
         return f'{self.user_id}: {self.name}'
+
+    def set_password(self, password):
+        self.password = generate_password_hash(password)
+
+    def check_password(self, password):
+        return check_password_hash(self.password, password)
+
+    def get_id(self):
+        return (self.user_id)
 
 
 class VKGroups(db.Model):

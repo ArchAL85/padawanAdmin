@@ -53,7 +53,7 @@
 										</a>
 									</li>
 									<li>
-										<a href="#edit">
+										<a href="{{ url_for('logout') }}">
 											<span class="link-collapse">Выйти</span>
 										</a>
 									</li>
@@ -63,7 +63,7 @@
 					</div>
 					<ul class="nav">
 						<li class="nav-item active">
-							<a href="{{ url_for('frozen')}}">
+							<a href="{{ url_for('frozen') }}">
 								<i class="fas fa-snowflake"></i>
 								<p>Заморозка</p>
 							</a>
